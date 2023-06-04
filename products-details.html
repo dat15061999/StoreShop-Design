@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details || SportStore</title>
+    <link rel="shortcut icon" href="images/Virtual Shop.png">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Playfair:ital,wght@0,400;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="3">About</a></li>
+                    <li><a href="3">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" alt="" width="30px" height="30px"></a>
+            <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+    <!--  products -->
+    <div class="small-container single-product">
+        <div class="row" id="resultProduct-detail">
+        </div>
+    </div>
+    <!-- title -->
+    <div class="small-container">
+        <div class="row row-2"></div>
+        <h2>Related Products</h2>
+        <p>View More</p>
+
+    </div>
+
+    <!-- products -->
+
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-1.jpg" alt="">
+                <h4>Red Printed Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-3.jpg" alt="">
+                <h4>Gray Kaki Pants</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$45.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-2.jpg" alt="">
+                <h4>Black Shoes Adidas</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$20.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-4.jpg" alt="">
+                <h4>Blue Puma Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+
+                </div>
+                <p>$76.00</p>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/app-store.png" alt="">
+                        <img src="images/play-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png" alt="">
+                    <p>Magnam est! Exercitationem id deleniti voluptatem odit?</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Afflilate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Tiktok</li>
+                        <li>Instargram</li>
+                        <li>Zalo</li>
+                    </ul>
+                </div>
+            </div>
+            <hr />
+            <p class="copyright">Copyright 2020 - Easy Tutorials</p>
+        </div>
+    </div>
+    <script src="products.js"></script>
+    <script src="product-details.js"></script>
+    <script src="eventclick.js">
+    </script>
+</body>
+
+</html>

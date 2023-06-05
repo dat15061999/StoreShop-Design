@@ -28,6 +28,6 @@ function goLogin() {
     console.log(addLogin);
     console.log(addpassword);
     if (addLogin == 'admin' && addpassword == '123456') {
-        window.location.href = '/admin.html';
+        window.location.href = '/StoreShop-Design/admin.html';
     }
 }

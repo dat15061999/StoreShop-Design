@@ -33,7 +33,7 @@ function renderProducts(data) {
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
-                <p>$<span>${product.price}</span>.00</p>
+                <p>$<span style="font-family: 'Times New Roman', Times, serif;">${product.price}</span>.00</p>
                 <button class="btn-1" onclick='addtocart(${index})'>Add To Cart</button>
     </div>`
     })
@@ -100,7 +100,7 @@ function renderCart(listAdded) {
                         <h3>${product.ProductName}</h3>
                     </div>
                 </td> 
-                <td><strong>${product.ProductPrice * product.ProductAmount}</strong></td>
+                <td><strong style="font-family: 'Times New Roman', Times, serif;">${product.ProductPrice * product.ProductAmount}</strong></td>
                 <td><button class="btn-1" onclick='deleteValue(${index})'>Delete</button></td>
             </tr>
         `;
@@ -135,7 +135,7 @@ function renderCartNew() {
                             <h3>${product.ProductName}</h3>
                         </div>
                     </td>                    
-                    <td><strong id='priceDetal${index}'>${product.ProductPrice}</strong></td>
+                    <td><strong id='priceDetal${index}' style="font-family: 'Times New Roman', Times, serif;">${product.ProductPrice}</strong></td>
                     <td><button class="btn-1" onclick='deleteValue(${index})'>Delete</button></td>
                 </tr>
             `;

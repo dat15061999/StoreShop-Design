@@ -12,7 +12,6 @@ let products = [
     { id: '11', name: 'Grey Shoes', type: 'Shoes', price: '75', image: 'images/product-11.jpg', amount: '1', size: ['XL', 'L', 'M', 'S'], total: '75' },
     { id: '12', name: 'Jean Supper Maza', type: 'Pants', price: '500', image: 'images/product-12.jpg', amount: '1', size: ['XL', 'L', 'M', 'S'], total: '500' },
 ]
-
-localStorage.setItem('listProduct', JSON.stringify(products));
-
-JSON.parse(localStorage.getItem('listProduct'));
+if (localStorage.getItem('listProduct') == null) {
+    localStorage.setItem('listProduct', JSON.stringify(products));
+}

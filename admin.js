@@ -16,9 +16,9 @@ function renderProducts(data) {
                     </td>
                     <td>${product.type}</td>
                     <td>
-                        <small>Price: $${product.price}</small>
+                        <small>Price: $<strong style="font-family: 'Times New Roman', Times, serif;">${product.price}</strong></small>
                     </td>                
-                        <td><button class="btn" onclick="editValue(${index})">Edit</button></td>
+                        <td><button class="btn" onclick="editValue(${product.id})">Edit</button></td>
                         <td><button class="btn" onclick="remoteValue(${index})">Remove</button></td>
                 </tr>`
     })
@@ -26,17 +26,19 @@ function renderProducts(data) {
 }
 
 // -----add product ------
-
-function addcart() {
+function addProduct() {
     let id = document.getElementById('idadmin').value;
     let name = document.getElementById('idname').value;
     let price = document.getElementById('idprice').value;
     let image = document.getElementById('idiamge').value;
     let amount = document.getElementById('idamount').value;
     let total = document.getElementById('idtotal').value;
-    if (!isNaN(id) && name !== '' && !isNaN(price) && !isNaN(amount) && !isNaN(total)) {
-        let product = { id, name, price, image, amount, total };
-        console.log(product);
+    let type = document.getElementById('idtype').value;
+    let size = []
+    let sizeproduct = document.getElementById('idsize').value;
+    size = sizeproduct.split(/,/)
+    if (!isNaN(id) && name !== '' && !isNaN(price) && !isNaN(amount) && !isNaN(total) && amount <= 50 && price <= 5000) {
+        let product = { id, name, price, image, amount, total, type, size };
         let listProducts = JSON.parse(localStorage.getItem('listProduct')) || [];
         listProducts.push(product);
         localStorage.setItem('listProduct', JSON.stringify(listProducts));
@@ -44,18 +46,56 @@ function addcart() {
         let confirms = confirm('Product added to cart!');
         if (confirms) {
             renderProducts(listProducts);
-            // location.reload();
+            location.reload();
         } else {
             alert('Please enter valid product information!');
         }
+    } else {
+        alert('Please change right information!');
     }
 };
+// ---edit product ----
+function editValue(id) {
+    let result = listProducts.filter(function (lpd) {
+        return lpd.id == id;
+    });
+    document.getElementById('idadmin').value = result[0].id;
+    document.getElementById('idname').value = result[0].name;
+    document.getElementById('idprice').value = result[0].price;
+    document.getElementById('idiamge').value = result[0].image;
+    document.getElementById('idamount').value = result[0].amount;
+    document.getElementById('idtotal').value = result[0].total;
+    document.getElementById('idtype').value = result[0].type;
+    document.getElementById('idsize').value = result[0].size;
+}
+function saveProduct() {
+    let idname = document.getElementById('idadmin').value;
+    let confirms = confirm('Are you sure change product!');
+    if (confirms) {
+        for (let i = 0; i < listProducts.length; i++) {
+            if (idname == listProducts[i].id) {
+                listProducts[i].id = document.getElementById('idadmin').value;
+                listProducts[i].name = document.getElementById('idname').value;
+                listProducts[i].price = document.getElementById('idprice').value;
+                listProducts[i].image = document.getElementById('idiamge').value;
+                listProducts[i].amount = document.getElementById('idamount').value;
+                listProducts[i].total = document.getElementById('idtotal').value;
+                listProducts[i].type = document.getElementById('idtype').value;
+                listProducts[i].size = document.getElementById('idsize').value;
+            }
+        }
+    }
+    localStorage.setItem('listProduct', JSON.stringify(listProducts));
+    renderProducts(listProducts);
+    location.reload();
+}
 
 
 // -----remote products-----
 function remoteValue(index) {
     listProducts.splice(index, 1)
     renderProducts(listProducts)
+    localStorage.setItem('listProduct', JSON.stringify(listProducts));
 }
 // -----GetOder------
 localStorage.setItem('products', JSON.stringify(listProducts));

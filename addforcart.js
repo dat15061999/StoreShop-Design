@@ -23,8 +23,8 @@ function renderCart(data) {
                     <option>${product.ProductSize[3]}</option>
                     </select>
                     </td>                
-                    <td><input  id='valueDetal${index}' type="number" value="${product.ProductAmount}"></td>
-                    <td><strong id='priceDetal${index}'>${product.ProductTotal}</strong></td>
+                    <td><input  id='valueDetal${index}' type="number" value="${product.ProductAmount}" style="font-family: 'Times New Roman', Times, serif;"></td>
+                    <td><strong id='priceDetal${index}' style="font-family: 'Times New Roman', Times, serif;">${product.ProductTotal}</strong></td>
                     <td><button class="btn-1" onclick='deleteValue(${index})'>Delete</button></td>
                 </tr>
             `;
